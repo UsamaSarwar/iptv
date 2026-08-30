@@ -189,7 +189,10 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
   }, [selectedCategory, favoriteChannels, filteredChannels, compareByLiveAndMedia]);
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-zinc-100 pb-24 sm:pb-16 relative overflow-hidden selection:bg-purple-600 selection:text-white flex flex-col justify-between">
+    <div
+      suppressHydrationWarning
+      className="min-h-screen bg-[#09090b] text-zinc-100 pb-24 sm:pb-16 relative overflow-hidden selection:bg-purple-600 selection:text-white flex flex-col justify-between"
+    >
       {/* Background Subtle Ambient Glow Orbs */}
       <div className="fixed top-0 left-1/4 w-150 h-150 bg-zinc-800/10 rounded-full blur-[160px] pointer-events-none -z-10" />
       <div className="fixed bottom-0 right-10 w-125 h-125 bg-zinc-800/10 rounded-full blur-[140px] pointer-events-none -z-10" />

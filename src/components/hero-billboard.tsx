@@ -124,6 +124,7 @@ export function HeroBillboard({ channel, channels }: HeroBillboardProps) {
 
   return (
     <div
+      suppressHydrationWarning
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}

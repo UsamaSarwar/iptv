@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { IPTVChannel } from "@/types/iptv";
 import { useIPTV } from "@/context/iptv-context";
 import { MainDashboard } from "@/components/main-dashboard";
-import { getChannelBySlug, getChannelSlug, slugify } from "@/lib/seo";
+import { getChannelBySlug } from "@/lib/seo";
 
 interface ChannelWatchClientProps {
   slug: string;
@@ -12,46 +12,24 @@ interface ChannelWatchClientProps {
 }
 
 export function ChannelWatchClient({ slug, serverChannel }: ChannelWatchClientProps) {
-  const { channels, setActiveChannel, activeChannel } = useIPTV();
+  const { channels, setActiveChannel } = useIPTV();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [slug]);
 
-
-
-  useEffect(() => {
-    // 1. If activeChannel already matches current route slug, preserve it
-    if (activeChannel) {
-      const activeSlug = getChannelSlug(activeChannel);
-      const activeNameSlug = slugify(activeChannel.name);
-      if (
-        activeSlug.toLowerCase() === slug.toLowerCase() ||
-        activeChannel.id.toLowerCase() === slug.toLowerCase() ||
-        activeNameSlug.toLowerCase() === slug.toLowerCase()
-      ) {
-        return;
-      }
-    }
-
-    // 2. Resolve channel from client state / IndexedDB
+    // When route slug changes: resolve and set the active channel
     if (channels.length > 0) {
-      const clientMatch = getChannelBySlug(slug, channels);
-      if (clientMatch) {
-        if (activeChannel?.id !== clientMatch.id) {
-          setActiveChannel(clientMatch);
-        }
+      const match = getChannelBySlug(slug, channels);
+      if (match) {
+        setActiveChannel(match);
         return;
       }
     }
 
-    // 3. Fallback: If server provided channel matching route, use it
     if (serverChannel) {
-      if (activeChannel?.id !== serverChannel.id) {
-        setActiveChannel(serverChannel);
-      }
+      setActiveChannel(serverChannel);
     }
-  }, [slug, serverChannel, channels, activeChannel, setActiveChannel]);
+  }, [slug, serverChannel, channels, setActiveChannel]);
 
   return <MainDashboard initialChannel={serverChannel} />;
 }

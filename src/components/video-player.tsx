@@ -1359,7 +1359,7 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
 
                   <button
                     type="button"
-                    onClick={() => setActiveChannel(null)}
+                    onClick={handleClose}
                     className="w-9 h-9 sm:w-auto sm:h-auto flex items-center justify-center sm:space-x-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-gray-200 border border-zinc-800 text-xs font-semibold transition-all cursor-pointer"
                     title="Close Channel"
                     aria-label="Close Channel"
@@ -1571,6 +1571,8 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
                     onToggleFav={() => toggleFavorite(item.id)}
                     onSelect={() => {
                       setActiveChannel(item);
+                      const targetSlug = getChannelSlug(item);
+                      router.push(`/watch/${targetSlug}`);
                     }}
                   />
                 ))}

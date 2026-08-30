@@ -198,6 +198,7 @@ export function Navbar() {
   return (
     <>
       <header
+        suppressHydrationWarning
         className={`fixed top-0 left-0 right-0 z-40 transition-[background-color,backdrop-filter,padding,box-shadow] duration-300 ${
           isScrolled
             ? "glass-nav shadow-2xl py-2.5"
@@ -923,7 +924,7 @@ export function Navbar() {
       </header>
 
       {/* Mobile Bottom Fixed Floating Navigation Bar */}
-      <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-zinc-950/95 border-t border-zinc-800/80 backdrop-blur-xl px-4 py-2 flex items-center justify-around shadow-2xl">
+      <nav suppressHydrationWarning className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-zinc-950/95 border-t border-zinc-800/80 backdrop-blur-xl px-4 py-2 flex items-center justify-around shadow-2xl">
         <Link
           href="/"
           onClick={() => {

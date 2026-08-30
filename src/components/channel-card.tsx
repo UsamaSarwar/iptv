@@ -38,16 +38,9 @@ export function ChannelCard({ channel, isGrid = false }: ChannelCardProps) {
   return (
     <Link
       href={`/watch/${channelSlug}`}
-      onClick={(e) => {
+      onClick={() => {
         setActiveChannel(channel);
-        if (typeof window !== "undefined" && window.location.pathname.startsWith("/watch/")) {
-          e.preventDefault();
-          const targetUrl = `/watch/${channelSlug}`;
-          if (window.location.pathname !== targetUrl) {
-            window.history.pushState(null, "", targetUrl);
-          }
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }}
       className={`group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:z-30 hover:shadow-2xl hover:shadow-black/80 bg-zinc-900/60 border border-zinc-800/80 hover:border-purple-500/50 p-4 flex flex-col justify-between select-none ${
         isGrid ? "w-full min-h-34" : "flex-none w-64 sm:w-72 md:w-80 min-h-34"
