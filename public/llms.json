@@ -1,0 +1,21 @@
+{
+  "app_name": "IPTV",
+  "url": "https://iptv.usama.dev",
+  "description": "A modern, open-source IPTV live TV streaming web application with HLS playback, custom M3U playlist importing, and PWA capabilities.",
+  "developer": "Usama Sarwar (https://usama.dev)",
+  "features": [
+    "Live TV channel streaming (HLS .m3u8 format)",
+    "Custom M3U and M3U8 URL and local file upload",
+    "Dynamic SEO routes: /watch/[channel-name]",
+    "Schema.org BroadcastEvent and VideoObject JSON-LD support",
+    "Progressive Web App (PWA) with offline shell and standalone display",
+    "Categorized rows: News, Sports, Movies, Cinema, Music, Kids, Documentaries",
+    "Keyboard shortcut Ctrl+K search and TV Guide drawer overlay"
+  ],
+  "routes": {
+    "home": "https://iptv.usama.dev/",
+    "sitemap": "https://iptv.usama.dev/sitemap.xml",
+    "robots": "https://iptv.usama.dev/robots.txt",
+    "channel_route_pattern": "https://iptv.usama.dev/watch/{channel-slug}"
+  }
+}

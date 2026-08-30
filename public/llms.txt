@@ -1,0 +1,26 @@
+# IPTV (iptv.usama.dev)
+
+> Modern IPTV Live Television Progressive Web App.
+
+## Overview
+IPTV allows users to stream live television channels, sports matches, breaking news, music streams, and movies from legal, open IPTV streams and custom M3U/M3U8 playlists.
+
+## Website
+- **URL**: https://iptv.usama.dev
+- **Sitemap**: https://iptv.usama.dev/sitemap.xml
+- **Robots.txt**: https://iptv.usama.dev/robots.txt
+
+## Key Capabilities
+1. **Live Stream Playback**: Play HLS `.m3u8` video streams across modern browsers.
+2. **Dynamic Channel Routing**: Every channel is accessible directly at `https://iptv.usama.dev/watch/{channel-name}` (e.g. `/watch/nasa-tv-hd`, `/watch/red-bull-tv`).
+3. **M3U Playlist Parser**: Users can import any M3U URL or upload local playlist files.
+4. **Structured Data**: Implements `BroadcastEvent`, `VideoObject`, and `TelevisionChannel` JSON-LD schemas.
+5. **PWA Support**: Full mobile and desktop installation with standalone app mode.
+
+## Categories Available
+- News (Bloomberg TV, Al Jazeera, DW English, France 24, Euronews)
+- Sports & Action (Red Bull TV, World Poker Tour, Origin Sports)
+- Movies & Cinema (Rakuten Action Movies, Comedy, Drama)
+- Music & Club (Clubbing TV, Stingray CMusic)
+- Documentary & Science (NASA TV HD, WildEarth TV, Weather Spy)
+- Kids & Family (Duck TV)

@@ -1,0 +1,37 @@
+name: 💡 Feature Request
+description: Suggest an idea or enhancement for IPTV
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to make IPTV better? Let us know!
+  - type: input
+    id: feature-title
+    attributes:
+      label: Feature Title
+      description: Brief one-line title of your proposal.
+      placeholder: e.g. Add Picture-in-Picture mode toggle button in theater view
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Use Case
+      description: Is your feature request related to a problem or missing workflow?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: A clear and concise description of what you want to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or features you've considered.
+    validations:
+      required: false

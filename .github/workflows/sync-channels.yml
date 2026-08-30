@@ -1,0 +1,46 @@
+name: Channel & Stream Status Sync
+
+on:
+  schedule:
+    # Runs twice daily at 00:00 and 12:00 UTC
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions dashboard
+
+permissions:
+  contents: write
+
+jobs:
+  sync-streams:
+    name: Sync Channels & Update Static Snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run IPTV Sync Engine
+        run: npm run sync
+
+      - name: Commit and Push Snapshot
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain public/channels-snapshot.json)" ]; then
+            git add public/channels-snapshot.json
+            git commit -m "chore(sync): update channels snapshot [skip ci]"
+            git push
+            echo "Successfully updated and pushed new channels-snapshot.json"
+          else
+            echo "No changes detected in channels-snapshot.json"
+          fi

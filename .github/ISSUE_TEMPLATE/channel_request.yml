@@ -1,0 +1,43 @@
+name: 📺 Channel / Stream Request
+description: Request adding or updating an open-source TV channel or stream
+labels: ["channels", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please ensure the stream is a free, publicly broadcasted, legal stream (e.g. from official news networks or open-source community feeds).
+  - type: input
+    id: channel-name
+    attributes:
+      label: Channel Name
+      placeholder: e.g. NASA TV HD
+    validations:
+      required: true
+  - type: input
+    id: channel-country
+    attributes:
+      label: Country / Region
+      placeholder: e.g. United States
+    validations:
+      required: true
+  - type: input
+    id: channel-category
+    attributes:
+      label: Category
+      placeholder: e.g. News, Sports, Science, Documentary, Kids
+    validations:
+      required: true
+  - type: input
+    id: stream-url
+    attributes:
+      label: Stream URL (.m3u8)
+      placeholder: https://.../stream.m3u8
+    validations:
+      required: true
+  - type: input
+    id: logo-url
+    attributes:
+      label: Channel Logo URL (optional)
+      placeholder: https://.../logo.png
+    validations:
+      required: false

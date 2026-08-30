@@ -1,0 +1,45 @@
+name: 🐛 Bug Report
+description: Create a report to help us improve the IPTV player or application
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: A concise description of the bug.
+      placeholder: e.g. Channel audio cuts out when switching streams quickly
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Open the app
+        2. Click on channel '...'
+        3. Observe error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Info
+      description: Browser version, OS, device, etc.
+      placeholder: |
+        - Browser: Chrome 122 / Safari 17 / Firefox 123
+        - OS: macOS 14 / Windows 11 / iOS 17 / Android 14
+        - Device: Desktop / Mobile / Smart TV
+    validations:
+      required: false
