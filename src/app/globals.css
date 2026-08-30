@@ -106,3 +106,33 @@ body {
 .animate-live-pulse {
   animation: live-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Buy Me a Coffee Floating Widget Styling & Fullscreen Hiding */
+#bmc-wbtn,
+[id*="bmc-wbtn"],
+.bmc-btn-container,
+iframe[id*="bmc"] {
+  z-index: 35 !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+/* Hide BMC widget on Fullscreen mode */
+:fullscreen #bmc-wbtn,
+:fullscreen [id*="bmc-wbtn"],
+:fullscreen iframe[id*="bmc"],
+:-webkit-full-screen #bmc-wbtn,
+:-webkit-full-screen [id*="bmc-wbtn"],
+:-webkit-full-screen iframe[id*="bmc"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* On mobile screens, float above the mobile bottom fixed navigation bar */
+@media (max-width: 640px) {
+  #bmc-wbtn,
+  [id*="bmc-wbtn"] {
+    bottom: 72px !important;
+  }
+}
