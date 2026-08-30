@@ -6,10 +6,13 @@
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Static_Hosting-181717?style=flat&logo=github)](https://pages.github.com/)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/usamasarwar)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
 A state-of-the-art, high-performance web IPTV streaming application featuring **11,000+ live television channels** from across the globe, real-time stream health monitoring, and a premium cinema user interface.
 
-🌐 **Live Website:** [https://iptv.usama.dev](https://iptv.usama.dev)
+🌐 **Live Website:** [https://iptv.usama.dev](https://iptv.usama.dev)  
+☕ **Support the Project:** [Buy Me a Coffee](https://buymeacoffee.com/usamasarwar)
 
 ---
 
@@ -122,6 +125,16 @@ Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE
 ## 🔒 Security
 
 For vulnerability reporting and disclosure guidelines, please see [SECURITY.md](SECURITY.md).
+
+---
+
+## 💖 Support & Sponsor
+
+If you find this project useful, consider supporting its maintenance and continued development:
+
+<a href="https://buymeacoffee.com/usamasarwar" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="45" width="162">
+</a>
 
 ---
 
