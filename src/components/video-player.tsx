@@ -346,6 +346,9 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
       hlsRef.current.destroy();
       hlsRef.current = null;
     }
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
 
     const streamUrl = activeChannel.url;
     setDetectedResolution(null);
@@ -605,6 +608,9 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
         hlsRef.current.destroy();
         hlsRef.current = null;
       }
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
     };
   }, [activeChannel, bufferMode, retryCount, setIsPlaying, markChannelOffline, markChannelVerifiedLive, updateBufferMetrics]);
 
@@ -926,6 +932,7 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
             }`}
           >
             <video
+              key={activeChannel.id}
               ref={videoRef}
               autoPlay
               playsInline

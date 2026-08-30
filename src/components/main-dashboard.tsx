@@ -208,7 +208,7 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
         {!isHomePage ? (
           <div className="w-full">
             {activeChannel ? (
-              <VideoPlayer channel={activeChannel} />
+              <VideoPlayer key={activeChannel.id} channel={activeChannel} />
             ) : (
               <div className="w-full max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 pt-16 sm:pt-20">
                 <div className="aspect-video w-full rounded-2xl bg-zinc-900/80 border border-zinc-800 animate-pulse flex flex-col items-center justify-center space-y-3">
