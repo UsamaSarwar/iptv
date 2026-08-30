@@ -14,6 +14,8 @@ import { SearchModal } from "@/components/search-modal";
 import { CountryPromptModal } from "@/components/country-prompt-modal";
 import { useTVNavigation } from "@/lib/use-tv-navigation";
 import { IPTVChannel } from "@/types/iptv";
+import { Coffee, Heart, Tv, ExternalLink, Code } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 
 interface MainDashboardProps {
   isHomePage?: boolean;
@@ -331,42 +333,188 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
       </main>
 
       {/* Footer Credits */}
-      <footer className="w-full py-8 mt-12 border-t border-zinc-800/80 relative z-20">
-        <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <div className="flex items-center space-x-2 text-center sm:text-left">
-            <span className="font-orbitron font-black tracking-wider text-gray-300 text-sm">IPTV</span>
-            <span>•</span>
-            <span className="whitespace-nowrap">Live Television Streaming</span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center">
-            <div className="flex items-center space-x-3">
-              <Link
-                href="/terms"
-                className="text-gray-400 hover:text-purple-300 transition-colors whitespace-nowrap"
-              >
-                Terms of Use
-              </Link>
-              <span className="text-zinc-600">•</span>
-              <Link
-                href="/privacy"
-                className="text-gray-400 hover:text-purple-300 transition-colors whitespace-nowrap"
-              >
-                Privacy Policy
-              </Link>
+      <footer className="w-full py-12 mt-16 border-t border-zinc-800/80 bg-zinc-950/60 backdrop-blur-sm relative z-20">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8 text-xs text-zinc-400">
+          {/* Main Footer Header */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-800/80">
+            <div className="space-y-2 max-w-xl">
+              <div className="flex items-center space-x-2.5">
+                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                  <Tv className="w-4 h-4 text-purple-400" />
+                </div>
+                <div className="flex items-baseline space-x-1.5">
+                  <span className="font-orbitron text-lg font-black tracking-wider text-white">
+                    IPTV
+                  </span>
+                  <span className="text-[9px] font-bold text-purple-400 tracking-wider">
+                    LIVE
+                  </span>
+                </div>
+              </div>
+              <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                Free & open-source live television web player. Stream 5,000+ public global broadcast channels with zero tracking, instant playback, and no ads.
+              </p>
             </div>
-            <span className="hidden sm:inline text-zinc-600">•</span>
-            <span className="whitespace-nowrap">
-              Powered by{" "}
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Buy Me a Coffee */}
               <a
-                href="https://usama.dev"
+                href="https://buymeacoffee.com/usamasarwar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-400 hover:text-purple-300 font-semibold no-underline transition-colors"
+                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
               >
-                Usama Sarwar
+                <Coffee className="w-4 h-4 text-zinc-950 fill-zinc-950" />
+                <span>Buy Me a Coffee</span>
               </a>
-            </span>
+
+              {/* GitHub Repository */}
+              <a
+                href="https://github.com/UsamaSarwar/iptv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-purple-500/40 text-zinc-200 hover:text-white font-semibold text-xs shadow-md transition-all hover:scale-105 active:scale-95 shrink-0"
+              >
+                <GithubIcon className="w-4 h-4" />
+                <span>GitHub Repository</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Links Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 pt-2">
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Open Source</h4>
+              <ul className="space-y-2 text-zinc-400">
+                <li>
+                  <a
+                    href="https://github.com/UsamaSarwar/iptv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-300 transition-colors inline-flex items-center space-x-1"
+                  >
+                    <span>Source Code</span>
+                    <ExternalLink className="w-3 h-3 text-zinc-600" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/UsamaSarwar/iptv/blob/main/LICENSE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-300 transition-colors"
+                  >
+                    MIT License
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/UsamaSarwar/iptv/blob/main/CONTRIBUTING.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-300 transition-colors"
+                  >
+                    Contributing
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/UsamaSarwar/iptv/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-300 transition-colors"
+                  >
+                    Report an Issue
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Community & Data</h4>
+              <ul className="space-y-2 text-zinc-400">
+                <li>
+                  <a
+                    href="https://github.com/iptv-org/iptv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-300 transition-colors inline-flex items-center space-x-1"
+                  >
+                    <span>iptv-org Catalog</span>
+                    <ExternalLink className="w-3 h-3 text-zinc-600" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://buymeacoffee.com/usamasarwar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-amber-300 transition-colors inline-flex items-center space-x-1 font-medium text-amber-400/90"
+                  >
+                    <Coffee className="w-3 h-3" />
+                    <span>Support Creator</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Legal & Privacy</h4>
+              <ul className="space-y-2 text-zinc-400">
+                <li>
+                  <Link href="/terms" className="hover:text-purple-300 transition-colors">
+                    Terms of Use
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="hover:text-purple-300 transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3 col-span-2 sm:col-span-1">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Developer</h4>
+              <p className="text-zinc-400 text-xs leading-relaxed">
+                Created & maintained with <Heart className="w-3 h-3 inline text-red-500 fill-red-500" /> by{" "}
+                <a
+                  href="https://usama.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:text-purple-300 font-semibold transition-colors"
+                >
+                  Usama Sarwar
+                </a>.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Copyright */}
+          <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-zinc-500 text-center sm:text-left">
+            <span>© {new Date().getFullYear()} IPTV. Released under the MIT License.</span>
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://github.com/UsamaSarwar/iptv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-zinc-300 transition-colors inline-flex items-center space-x-1"
+              >
+                <Code className="w-3.5 h-3.5" />
+                <span>Open Source</span>
+              </a>
+              <span>•</span>
+              <a
+                href="https://buymeacoffee.com/usamasarwar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors inline-flex items-center space-x-1"
+              >
+                <Coffee className="w-3.5 h-3.5 text-amber-400" />
+                <span>Donate</span>
+              </a>
+            </div>
           </div>
         </div>
       </footer>

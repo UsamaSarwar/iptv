@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Shield, Tv, ExternalLink } from "lucide-react";
+import { ArrowLeft, Shield, Tv, ExternalLink, Coffee } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Terms of Use & Legal Disclaimer - IPTV",
@@ -101,20 +102,44 @@ export default function TermsPage() {
 
         {/* Footer info */}
         <div className="pt-6 border-t border-purple-900/40 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <span className="whitespace-nowrap">
-            <span className="font-orbitron font-black tracking-wider text-gray-300">IPTV</span> • Open Live Streaming Player
-          </span>
-          <span className="whitespace-nowrap">
-            Powered by{" "}
+          <div className="flex items-center space-x-2">
+            <span className="font-orbitron font-black tracking-wider text-gray-300">IPTV</span>
+            <span>•</span>
+            <span>Open Live Streaming Player</span>
+          </div>
+          <div className="flex items-center space-x-3 text-xs">
             <a
-              href="https://usama.dev"
+              href="https://buymeacoffee.com/usamasarwar"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 font-semibold"
+              className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center space-x-1"
             >
-              Usama Sarwar
+              <Coffee className="w-3.5 h-3.5" />
+              <span>Support</span>
             </a>
-          </span>
+            <span>•</span>
+            <a
+              href="https://github.com/UsamaSarwar/iptv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors inline-flex items-center space-x-1"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
+            <span>•</span>
+            <span>
+              Powered by{" "}
+              <a
+                href="https://usama.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 font-semibold"
+              >
+                Usama Sarwar
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </div>

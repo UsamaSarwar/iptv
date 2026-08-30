@@ -18,6 +18,7 @@ import {
   X,
   Menu,
   RefreshCw,
+  Coffee,
 } from "lucide-react";
 
 export function Navbar() {
@@ -698,6 +699,18 @@ export function Navbar() {
               </kbd>
             </button>
 
+            {/* Support / Buy Me a Coffee */}
+            <a
+              href="https://buymeacoffee.com/usamasarwar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-9 hidden lg:flex items-center space-x-1.5 px-3 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:text-amber-200 text-xs font-semibold transition-all whitespace-nowrap"
+              title="Support the project on Buy Me a Coffee"
+            >
+              <Coffee className="w-3.5 h-3.5 text-amber-400" />
+              <span>Support</span>
+            </a>
+
             {/* Import Custom Playlist */}
             <button
               onClick={() => setIsPlaylistModalOpen(true)}
@@ -902,6 +915,16 @@ export function Navbar() {
                   <Heart className="w-3.5 h-3.5 fill-purple-400 text-purple-400" />
                   <span>My Favorites ({favorites.length})</span>
                 </button>
+
+                <a
+                  href="https://buymeacoffee.com/usamasarwar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1.5 text-xs text-amber-400 hover:text-amber-300 font-semibold"
+                >
+                  <Coffee className="w-3.5 h-3.5" />
+                  <span>Support Project</span>
+                </a>
 
                 <button
                   onClick={() => {
