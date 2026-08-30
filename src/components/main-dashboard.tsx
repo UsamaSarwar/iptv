@@ -339,9 +339,7 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-800/80">
             <div className="space-y-2 max-w-xl">
               <div className="flex items-center space-x-2.5">
-                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-                  <Tv className="w-4 h-4 text-purple-400" />
-                </div>
+                <Tv className="w-6 h-6 text-purple-400 shrink-0" />
                 <div className="flex items-baseline space-x-1.5">
                   <span className="font-orbitron text-lg font-black tracking-wider text-white">
                     IPTV

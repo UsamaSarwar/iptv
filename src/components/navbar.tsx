@@ -222,9 +222,7 @@ export function Navbar() {
               }}
               className="flex items-center space-x-2 cursor-pointer group shrink-0 select-none"
             >
-              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-purple-500/50 transition-colors">
-                <Tv className="w-4.5 h-4.5 text-purple-400 group-hover:text-purple-300 transition-colors" />
-              </div>
+              <Tv className="w-6 h-6 sm:w-7 sm:h-7 text-purple-400 group-hover:text-purple-300 transition-colors shrink-0" />
 
               <div className="flex items-baseline space-x-1.5">
                 <span className="font-orbitron text-lg sm:text-xl font-black tracking-wider text-white group-hover:text-zinc-200 transition-colors">
