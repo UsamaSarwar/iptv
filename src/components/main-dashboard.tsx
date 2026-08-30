@@ -15,7 +15,7 @@ import { CountryPromptModal } from "@/components/country-prompt-modal";
 import { useTVNavigation } from "@/lib/use-tv-navigation";
 import { IPTVChannel } from "@/types/iptv";
 import { Coffee, Heart, Tv, ExternalLink, Code } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon, BuyMeACoffeeIcon } from "@/components/icons";
 
 interface MainDashboardProps {
   isHomePage?: boolean;
@@ -365,12 +365,7 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
                 style={{ backgroundColor: "#BD5FFF" }}
                 title="Support us on Buy Me a Coffee!"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
-                  alt="Buy us a coffee"
-                  className="w-4 h-4 object-contain"
-                />
+                <BuyMeACoffeeIcon className="w-4 h-4 text-white" />
                 <span className="font-semibold text-white text-xs tracking-wide">
                   Buy us a coffee
                 </span>

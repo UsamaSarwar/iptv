@@ -133,10 +133,15 @@ body {
   pointer-events: none !important;
 }
 
-/* On mobile screens, float above the mobile bottom fixed navigation bar */
-@media (max-width: 640px) {
+/* Hide BMC floating widget on mobile screens (< 640px) */
+@media (max-width: 639px) {
   #bmc-wbtn,
-  [id*="bmc-wbtn"] {
-    bottom: 72px !important;
+  [id*="bmc-wbtn"],
+  .bmc-btn-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
+

@@ -222,7 +222,7 @@ export function SearchModal() {
                   setActiveChannel(ch);
                   setIsSearchOpen(false);
                   const channelSlug = getChannelSlug(ch);
-                  router.push(`/watch/${channelSlug}`);
+                  router.push(`/watch/${channelSlug}/`);
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 onToggleFavorite={() => toggleFavorite(ch.id)}

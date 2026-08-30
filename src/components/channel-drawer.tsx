@@ -250,7 +250,7 @@ export function ChannelDrawer() {
                   setActiveChannel(ch);
                   setIsChannelGuideOpen(false);
                   const channelSlug = getChannelSlug(ch);
-                  router.push(`/watch/${channelSlug}`);
+                  router.push(`/watch/${channelSlug}/`);
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 onToggleFav={() => toggleFavorite(ch.id)}

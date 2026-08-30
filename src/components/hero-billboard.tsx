@@ -191,7 +191,7 @@ export function HeroBillboard({ channel, channels }: HeroBillboardProps) {
           <div className="flex items-center space-x-2.5 sm:space-x-3 pt-1 sm:pt-2">
             {/* Watch Live Button with dynamic route */}
             <Link
-              href={`/watch/${channelSlug}`}
+              href={`/watch/${channelSlug}/`}
               onClick={() => {
                 setActiveChannel(currentChannel);
                 window.scrollTo({ top: 0, behavior: "instant" });
@@ -385,7 +385,7 @@ export function HeroBillboard({ channel, channels }: HeroBillboardProps) {
             {/* Action Buttons */}
             <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between gap-3">
               <Link
-                href={`/watch/${channelSlug}`}
+                href={`/watch/${channelSlug}/`}
                 onClick={() => {
                   setActiveChannel(currentChannel);
                   setIsInfoModalOpen(false);

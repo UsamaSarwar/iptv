@@ -75,7 +75,7 @@ export function generateChannelMetadata(channel: IPTVChannel): Metadata {
   const description =
     channel.description ||
     `Stream ${channel.name} live in HD quality on IPTV. Watch ${channel.group} television online for free.`;
-  const channelUrl = `${BASE_URL}/watch/${getChannelSlug(channel)}`;
+  const channelUrl = `${BASE_URL}/watch/${getChannelSlug(channel)}/`;
   const ogImage = channel.backdrop || `${BASE_URL}/og-image.png`;
 
   return {
@@ -109,7 +109,7 @@ export function generateChannelMetadata(channel: IPTVChannel): Metadata {
 }
 
 export function generateChannelJsonLd(channel: IPTVChannel) {
-  const channelUrl = `${BASE_URL}/watch/${getChannelSlug(channel)}`;
+  const channelUrl = `${BASE_URL}/watch/${getChannelSlug(channel)}/`;
 
   return {
     "@context": "https://schema.org",

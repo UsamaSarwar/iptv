@@ -243,12 +243,16 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
     };
   }, []);
 
-  // Keep URL in sync with active channel
+  // Keep URL in sync with active channel without triggering RSC network fetch loops
   useEffect(() => {
-    if (activeChannel) {
+    if (activeChannel && typeof window !== "undefined") {
       const channelSlug = getChannelSlug(activeChannel);
-      if (!window.location.pathname.startsWith(`/watch/${channelSlug}`)) {
-        window.history.replaceState(null, "", `/watch/${channelSlug}`);
+      const targetPath = `/watch/${channelSlug}/`;
+      if (
+        window.location.pathname !== targetPath &&
+        window.location.pathname !== `/watch/${channelSlug}`
+      ) {
+        window.history.replaceState(window.history.state, "", targetPath);
       }
     }
   }, [activeChannel]);
@@ -712,7 +716,7 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
 
   const handleShare = useCallback(() => {
     if (typeof window !== "undefined" && activeChannel) {
-      const url = `${window.location.origin}/watch/${getChannelSlug(activeChannel)}`;
+      const url = `${window.location.origin}/watch/${getChannelSlug(activeChannel)}/`;
       navigator.clipboard.writeText(url).then(() => {
         setCopiedLink(true);
         setTimeout(() => setCopiedLink(false), 2000);
@@ -1579,7 +1583,7 @@ export function VideoPlayer({ channel }: VideoPlayerProps = {}) {
                     onSelect={() => {
                       setActiveChannel(item);
                       const targetSlug = getChannelSlug(item);
-                      router.push(`/watch/${targetSlug}`);
+                      router.push(`/watch/${targetSlug}/`);
                     }}
                   />
                 ))}

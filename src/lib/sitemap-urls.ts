@@ -13,7 +13,7 @@ export async function getSitemapUrls(): Promise<string[]> {
   const staticPages = [BASE_URL, `${BASE_URL}/terms`, `${BASE_URL}/privacy`];
 
   const channelPages = allChannels.map(
-    (channel) => `${BASE_URL}/watch/${getChannelSlug(channel)}`
+    (channel) => `${BASE_URL}/watch/${getChannelSlug(channel)}/`
   );
 
   return [...staticPages, ...channelPages];

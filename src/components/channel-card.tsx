@@ -37,7 +37,7 @@ export function ChannelCard({ channel, isGrid = false }: ChannelCardProps) {
 
   return (
     <Link
-      href={`/watch/${channelSlug}`}
+      href={`/watch/${channelSlug}/`}
       onClick={() => {
         setActiveChannel(channel);
         window.scrollTo({ top: 0, behavior: "smooth" });
