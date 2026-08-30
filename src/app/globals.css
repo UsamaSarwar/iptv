@@ -37,7 +37,6 @@ body {
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
-  user-select: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -110,19 +109,24 @@ body {
 /* Buy Me a Coffee Floating Widget Styling & Fullscreen Hiding */
 #bmc-wbtn,
 [id*="bmc-wbtn"],
-.bmc-btn-container,
-iframe[id*="bmc"] {
+.bmc-btn-container {
   z-index: 35 !important;
-  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+#bmc-iframe,
+#bmc-close-btn {
+  z-index: 99999 !important;
 }
 
 /* Hide BMC widget on Fullscreen mode */
 :fullscreen #bmc-wbtn,
 :fullscreen [id*="bmc-wbtn"],
-:fullscreen iframe[id*="bmc"],
+:fullscreen #bmc-iframe,
+:fullscreen #bmc-close-btn,
 :-webkit-full-screen #bmc-wbtn,
 :-webkit-full-screen [id*="bmc-wbtn"],
-:-webkit-full-screen iframe[id*="bmc"] {
+:-webkit-full-screen #bmc-iframe,
+:-webkit-full-screen #bmc-close-btn {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;

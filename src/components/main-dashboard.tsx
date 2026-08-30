@@ -356,15 +356,24 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3">
-              {/* Buy Me a Coffee */}
+              {/* Buy Us a Coffee */}
               <a
                 href="https://buymeacoffee.com/usamasarwar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
+                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition-all hover:scale-105 active:scale-95 shrink-0 border border-black/50"
+                style={{ backgroundColor: "#BD5FFF" }}
+                title="Support us on Buy Me a Coffee!"
               >
-                <Coffee className="w-4 h-4 text-zinc-950 fill-zinc-950" />
-                <span>Buy Me a Coffee</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
+                  alt="Buy us a coffee"
+                  className="w-4 h-4 object-contain"
+                />
+                <span className="font-semibold text-white text-xs tracking-wide">
+                  Buy us a coffee
+                </span>
               </a>
 
               {/* GitHub Repository */}
