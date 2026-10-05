@@ -1,25 +1,24 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { getCountryFlagEmoji, useIPTV } from "@/context/iptv-context";
+import {
+  Check,
+  ChevronDown,
+  Compass,
+  Globe,
+  Heart,
+  Layers,
+  Menu,
+  Plus,
+  RefreshCw,
+  Search,
+  SlidersHorizontal,
+  Tv,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useIPTV, getCountryFlagEmoji } from "@/context/iptv-context";
-import {
-  Tv,
-  Search,
-  Plus,
-  Heart,
-  Compass,
-  ChevronDown,
-  Check,
-  Layers,
-  Globe,
-  SlidersHorizontal,
-  X,
-  Menu,
-  RefreshCw,
-} from "lucide-react";
-import { BuyMeACoffeeIcon } from "@/components/icons";
+import { useEffect, useRef, useState } from "react";
 
 export function Navbar() {
   const router = useRouter();
@@ -697,18 +696,6 @@ export function Navbar() {
               </kbd>
             </button>
 
-            {/* Support / Buy Me a Coffee */}
-            <a
-              href="https://buymeacoffee.com/usamasarwar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-9 hidden lg:flex items-center space-x-2 px-3 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:text-amber-200 text-xs font-semibold transition-all whitespace-nowrap"
-              title="Support the project on Buy Me a Coffee"
-            >
-              <BuyMeACoffeeIcon className="w-3.5 h-3.5 text-zinc-100" />
-              <span>Support</span>
-            </a>
-
             {/* Import Custom Playlist */}
             <button
               onClick={() => setIsPlaylistModalOpen(true)}
@@ -721,17 +708,6 @@ export function Navbar() {
 
           {/* Mobile Right Quick Action Icons */}
           <div className="flex sm:hidden items-center space-x-1.5 shrink-0">
-            {/* Buy Me a Coffee Button */}
-            <a
-              href="https://buymeacoffee.com/usamasarwar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-amber-500/40 transition-colors shrink-0"
-              title="Buy me a coffee"
-            >
-              <BuyMeACoffeeIcon className="w-4 h-4 text-zinc-100" />
-            </a>
-
             {/* Mobile Sync Trigger */}
             <button
               type="button"
@@ -924,16 +900,6 @@ export function Navbar() {
                   <Heart className="w-3.5 h-3.5 fill-purple-400 text-purple-400" />
                   <span>My Favorites ({favorites.length})</span>
                 </button>
-
-                <a
-                  href="https://buymeacoffee.com/usamasarwar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-1.5 text-xs text-amber-400 hover:text-amber-300 font-semibold"
-                >
-                  <BuyMeACoffeeIcon className="w-3.5 h-3.5 text-zinc-100" />
-                  <span>Support Project</span>
-                </a>
 
                 <button
                   onClick={() => {

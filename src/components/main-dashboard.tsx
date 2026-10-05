@@ -1,21 +1,21 @@
 "use client";
 
-import React, { useMemo } from "react";
-import Link from "next/link";
-import { useIPTV, splitCategories, normalizeCountry, normalizeLanguage, normalizeCategory, formatChannelDisplayName } from "@/context/iptv-context";
-import { Navbar } from "@/components/navbar";
-import { HeroBillboard } from "@/components/hero-billboard";
-import { ChannelRow } from "@/components/channel-row";
 import { ChannelCard } from "@/components/channel-card";
-import { VideoPlayer } from "@/components/video-player";
-import { PlaylistModal } from "@/components/playlist-modal";
 import { ChannelDrawer } from "@/components/channel-drawer";
-import { SearchModal } from "@/components/search-modal";
+import { ChannelRow } from "@/components/channel-row";
 import { CountryPromptModal } from "@/components/country-prompt-modal";
+import { HeroBillboard } from "@/components/hero-billboard";
+import { GithubIcon } from "@/components/icons";
+import { Navbar } from "@/components/navbar";
+import { PlaylistModal } from "@/components/playlist-modal";
+import { SearchModal } from "@/components/search-modal";
+import { VideoPlayer } from "@/components/video-player";
+import { formatChannelDisplayName, normalizeCategory, normalizeCountry, normalizeLanguage, splitCategories, useIPTV } from "@/context/iptv-context";
 import { useTVNavigation } from "@/lib/use-tv-navigation";
 import { IPTVChannel } from "@/types/iptv";
-import { Coffee, Heart, Tv, ExternalLink, Code } from "lucide-react";
-import { GithubIcon, BuyMeACoffeeIcon } from "@/components/icons";
+import { Code, ExternalLink, Heart, Tv } from "lucide-react";
+import Link from "next/link";
+import React, { useMemo } from "react";
 
 interface MainDashboardProps {
   isHomePage?: boolean;
@@ -356,21 +356,6 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3">
-              {/* Buy Us a Coffee */}
-              <a
-                href="https://buymeacoffee.com/usamasarwar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition-all hover:scale-105 active:scale-95 shrink-0 border border-black/50"
-                style={{ backgroundColor: "#BD5FFF" }}
-                title="Support us on Buy Me a Coffee!"
-              >
-                <BuyMeACoffeeIcon className="w-4 h-4 text-white" />
-                <span className="font-semibold text-white text-xs tracking-wide">
-                  Buy us a coffee
-                </span>
-              </a>
-
               {/* GitHub Repository */}
               <a
                 href="https://github.com/UsamaSarwar/iptv"
@@ -447,17 +432,6 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
                     <ExternalLink className="w-3 h-3 text-zinc-600" />
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="https://buymeacoffee.com/usamasarwar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-amber-300 transition-colors inline-flex items-center space-x-1 font-medium text-amber-400/90"
-                  >
-                    <Coffee className="w-3 h-3" />
-                    <span>Support Creator</span>
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -505,16 +479,6 @@ export function MainDashboard({ isHomePage = false, initialChannel }: MainDashbo
               >
                 <Code className="w-3.5 h-3.5" />
                 <span>Open Source</span>
-              </a>
-              <span>•</span>
-              <a
-                href="https://buymeacoffee.com/usamasarwar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors inline-flex items-center space-x-1"
-              >
-                <Coffee className="w-3.5 h-3.5 text-amber-400" />
-                <span>Donate</span>
               </a>
             </div>
           </div>

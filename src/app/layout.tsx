@@ -1,10 +1,9 @@
+import { PWARegister } from "@/components/pwa-register";
+import { IPTVProvider } from "@/context/iptv-context";
+import { generateWebsiteJsonLd } from "@/lib/seo";
 import type { Metadata, Viewport } from "next";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
-import { IPTVProvider } from "@/context/iptv-context";
-import { generateWebsiteJsonLd } from "@/lib/seo";
-import { PWARegister } from "@/components/pwa-register";
-import { BMCFloatingWidget } from "@/components/bmc-floating-widget";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -129,7 +128,6 @@ export default function RootLayout({
         <IPTVProvider>
           {children}
           <PWARegister />
-          <BMCFloatingWidget />
         </IPTVProvider>
       </body>
     </html>

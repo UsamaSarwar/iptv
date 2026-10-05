@@ -1,7 +1,7 @@
+import { GithubIcon } from "@/components/icons";
+import { ArrowLeft, Database, Globe, Lock } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Lock, Database, Globe, Coffee } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - IPTV",
@@ -91,16 +91,6 @@ export default function PrivacyPage() {
             <span>Privacy-Focused TV Streaming</span>
           </div>
           <div className="flex items-center space-x-3 text-xs">
-            <a
-              href="https://buymeacoffee.com/usamasarwar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center space-x-1"
-            >
-              <Coffee className="w-3.5 h-3.5" />
-              <span>Support</span>
-            </a>
-            <span>•</span>
             <a
               href="https://github.com/UsamaSarwar/iptv"
               target="_blank"
